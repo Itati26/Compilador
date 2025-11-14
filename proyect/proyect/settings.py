@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'api',
     'rest_framework'
 ]
@@ -44,12 +45,23 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# Lista de orígenes que tienen permitido hacer peticiones a tu API.
+# Tu aplicación de React se está ejecutando en http://localhost:5173.
+#CORS_ALLOWED_ORIGINS = [
+#    "http://localhost:5173",
+#    "http://127.0.0.1:5173",
+#]
+
+# Opcional: si quieres permitir todos los orígenes (no recomendado para producción)
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'proyect.urls'
 
