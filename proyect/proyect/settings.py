@@ -62,7 +62,7 @@ MIDDLEWARE = [
 CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOW_ORIGINS = [
-    'https://compilador-six.vercel.app/'
+    'https://app-kappa-taupe.vercel.app/'
 ]
 
 ROOT_URLCONF = 'proyect.urls'
